@@ -1,0 +1,73 @@
+health = 100
+money = 50
+skill = 10
+
+print "Greetings. You have entered the World of Chew. You begin this life \n with %d dirums and %d skill points." % (money, skill)
+
+print "Before we continue, we must ask you. What is your name?"
+
+name = raw_input ("> ")
+
+print "Welcome %s." % name 
+print "Which guild would you like to join?"
+print "1. Paladins."
+print "2. Magi."
+print "3. Necromancers."
+
+guild = raw_input ("> ")
+
+if guild == "1":
+    print "Congratulations, you are now an apostate of the Paladins Guild."
+elif guild == "2":
+    print "Congratulations, you are now a neophyte of the Magi Guild."
+else:
+    print "Congratulations, you are now a neophyte of the Necromancers Guild."
+    
+print "Which portal would you like to enter now?"
+print "1. Portal Shalam"
+print "2. Portal Aeon"
+print "3. Portal Zena"
+
+portal = raw_input ("> ")
+
+if guild == "1" and portal == "1":
+    print "You have travelled through space and time to arrive at Shalam."
+    print "What would you like to do next?"
+    print "1. Learn swordsmanship."
+    print "2. Visit a shop."
+    
+    shalam = raw_input ("> ")
+    
+    if shalam == "1":
+        print """
+        Master Swordsman Jin welcomes you to Swordsmanship 101.
+        'Welcome %s to your first class,' he says. 
+        """ % name
+        print "What skills would you like to learn?"
+    
+    elif shalam == "2":
+        print "You are now at a shop. There are many items for you to buy."
+        print "What would you like to buy?"
+        print "1. A ceramic cup"
+        print "2. A double-edged sword"
+        print "3. A tunic"
+        
+        purchase_inventory = raw_input ("> ")
+        if purchase_inventory == "1" and money > 20:
+            print "Thank you for buying a ceramic cup!"
+        elif purchase_inventory == "2" and money > 100:
+            print "Thank you for buying a double-edged sword!"
+        elif purchase_inventory == "3" and money > 40:
+            print "Thank you for buying a tunic!"
+        else: 
+            print "Sorry, you do not have enough to buy it!"
+                
+    else:
+        print "Please try again!"
+    
+elif guild == "2" and portal == "2":
+    print "You have travelled through space and time to arrive at Aeon.\n There is nowhere else for you to go. Goodbye."
+elif guild == "3" and portal == "3":
+    print "You have travelled through space and time to arrive at Zena.\n There is nowhere else for you to go. Goodbye."
+else:
+    print "Oops, you entered the wrong portal. You are now trapped in a black hole. Goodbye."
